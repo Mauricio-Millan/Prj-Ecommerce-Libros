@@ -18,6 +18,7 @@ public interface Edicion_Repository extends JpaRepository<Edicion_Entity, Long> 
     Optional<Edicion_Entity> findById(int id);
 
     // En Edicion_Repository.java
+    /*
     @Modifying
     @Transactional
     @Query("UPDATE Edicion_Entity e SET e.idioma = :idioma, e.encuadernacion = :encuadernacion, " +
@@ -34,4 +35,6 @@ public interface Edicion_Repository extends JpaRepository<Edicion_Entity, Long> 
                       @Param("traductor") String traductor,
                       @Param("libroId") int libroId,
                       @Param("editorialId") int editorialId);
+                      *
+     */
 }

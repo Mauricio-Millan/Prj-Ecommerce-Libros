@@ -41,6 +41,9 @@ public class Usuario_Service_Impl implements Usuario_Service {
             Usuario_Entity usuarioActualizado = usuarioExistente.get();
             usuarioActualizado.setNombre(usuario.getNombre());
             usuarioActualizado.setClave(usuario.getClave());
+            usuarioActualizado.setApellido(usuario.getApellido());
+            usuarioActualizado.setEmail(usuario.getEmail());
+
 
             return usuario_repo.save(usuarioActualizado);
         }

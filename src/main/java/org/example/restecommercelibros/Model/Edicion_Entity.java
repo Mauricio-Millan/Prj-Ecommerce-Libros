@@ -48,4 +48,7 @@ public class Edicion_Entity {
     @ManyToOne
     @JoinColumn(name = "id_editorial")
     private Editorial_Entity editorial;
+
+    @Column(name = "imagen", length = 400)
+    private String imagen;
 }

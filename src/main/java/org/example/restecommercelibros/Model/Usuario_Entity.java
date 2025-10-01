@@ -1,5 +1,6 @@
 package org.example.restecommercelibros.Model;
 
+import ch.qos.logback.core.model.NamedModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +21,20 @@ public class Usuario_Entity {
     @Column(name = "nombre", length = 255)
     private String nombre;
 
+    @Column(name = "apellido", length = 255)
+    private String apellido;
+
     @Column(name = "clave", length = 255)
     private String clave;
+
+    @Column(name = "email", length = 255, unique = true)
+    private String email;
+
+    @Column(name = "direccion", length = 255)
+    private String direccion;
+
+    @Column(name = "numero-telefono", length = 20)
+    private String telefono;
+
+
 }
