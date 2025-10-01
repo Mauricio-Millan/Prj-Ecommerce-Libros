@@ -17,7 +17,12 @@ CREATE TABLE editorial (
 CREATE TABLE usuario (
   id SERIAL PRIMARY KEY,
   nombre VARCHAR(255) NOT NULL,
-  clave VARCHAR(255) NOT NULL
+  apellido VARCHAR(255) NOT NULL,
+  clave VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  direccion VARCHAR(255),
+  numero_telefono VARCHAR(20)
+
 );
 
 CREATE TABLE autor (
@@ -41,7 +46,8 @@ CREATE TABLE edicion (
   precio_venta NUMERIC(10,2),
   resumen TEXT,
   id_libro INT REFERENCES libro(id),
-  id_editorial INT REFERENCES editorial(id)
+  id_editorial INT REFERENCES editorial(id),
+  imagen VARCHAR(400)
 );
 
 CREATE TABLE venta (
@@ -105,16 +111,19 @@ INSERT INTO edicion (idioma, encuadernacion, dimensiones, traductor, fecha_publi
   ('Español', 'Tapa blanda', '20x13cm', 'Luis Torres', '2015-09-15', 17.75, 'La gran epopeya medieval.', 3, 3);
 
 -- Usuario (cliente)
-INSERT INTO usuario (nombre, clave) VALUES ('cliente1', 'clave123');
+INSERT INTO usuario (nombre, apellido,email, clave,direccion,numero_telefono) VALUES ('Mauricio','Millan Pariona','prueba@gmail.com','123456','Av. Siempre Viva 123','987654321');
 
 -- Venta
 INSERT INTO venta (id_usuario, fecha) VALUES (1, '2025-09-07');
-
+select * from usuario;
+select * from venta;
 -- Detalle de venta (compra los 3 libros)
 INSERT INTO detalle_venta (id_edicion, id_venta, cantidad, precio_venta, descuento) VALUES
   (1, 1, 1, 19.99, 0),
   (2, 1, 1, 24.50, 0),
   (3, 1, 1, 17.75, 0);
+
+select * from detalle_venta;
 
 
 select * from edicion
