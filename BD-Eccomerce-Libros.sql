@@ -14,15 +14,20 @@ CREATE TABLE editorial (
   nombre VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE rol(
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
 CREATE TABLE usuario (
   id SERIAL PRIMARY KEY,
   nombre VARCHAR(255) NOT NULL,
   apellido VARCHAR(255) NOT NULL,
-  clave VARCHAR(255) NOT NULL,
+  clave VARCHAR NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   direccion VARCHAR(255),
-  numero_telefono VARCHAR(20)
-
+  numero_telefono VARCHAR(20),
+  id_rol INT REFERENCES rol(id) default 1
 );
 
 CREATE TABLE autor (
@@ -47,7 +52,7 @@ CREATE TABLE edicion (
   resumen TEXT,
   id_libro INT REFERENCES libro(id),
   id_editorial INT REFERENCES editorial(id),
-  imagen VARCHAR(400)
+  imagen VARCHAR
 );
 
 CREATE TABLE venta (
@@ -110,6 +115,11 @@ INSERT INTO edicion (idioma, encuadernacion, dimensiones, traductor, fecha_publi
   ('Español', 'Rústica', '23x15cm', 'Ana Gómez', '2018-05-10', 24.50, 'Ensayos clásicos del Renacimiento.', 2, 2),
   ('Español', 'Tapa blanda', '20x13cm', 'Luis Torres', '2015-09-15', 17.75, 'La gran epopeya medieval.', 3, 3);
 
+-- Roles(Cargos)
+INSERT INTO rol (nombre) VALUES
+  ('Cliente'),
+  ('Vendedor'),
+  ('Administrador');
 -- Usuario (cliente)
 INSERT INTO usuario (nombre, apellido,email, clave,direccion,numero_telefono) VALUES ('Mauricio','Millan Pariona','prueba@gmail.com','123456','Av. Siempre Viva 123','987654321');
 
@@ -117,6 +127,8 @@ INSERT INTO usuario (nombre, apellido,email, clave,direccion,numero_telefono) VA
 INSERT INTO venta (id_usuario, fecha) VALUES (1, '2025-09-07');
 select * from usuario;
 select * from venta;
+
+select * from rol;
 -- Detalle de venta (compra los 3 libros)
 INSERT INTO detalle_venta (id_edicion, id_venta, cantidad, precio_venta, descuento) VALUES
   (1, 1, 1, 19.99, 0),
