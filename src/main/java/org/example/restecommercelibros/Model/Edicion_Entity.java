@@ -49,6 +49,6 @@ public class Edicion_Entity {
     @JoinColumn(name = "id_editorial")
     private Editorial_Entity editorial;
 
-    @Column(name = "imagen", length = 400)
+    @Column(name = "imagen")
     private String imagen;
 }

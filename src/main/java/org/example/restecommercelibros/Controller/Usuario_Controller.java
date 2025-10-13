@@ -1,8 +1,12 @@
 package org.example.restecommercelibros.Controller;
 
+import org.example.restecommercelibros.JWT.Auth_Response;
+import org.example.restecommercelibros.JWT.Login_Request;
+import org.example.restecommercelibros.JWT.Register_Request;
 import org.example.restecommercelibros.Model.Usuario_Entity;
 import org.example.restecommercelibros.Service.Usuario_Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,10 +27,6 @@ public class Usuario_Controller {
         return usuario_serv.findById(id);
     }
 
-    @PostMapping
-    public Usuario_Entity save(@RequestBody Usuario_Entity usuario) {
-        return usuario_serv.save(usuario);
-    }
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {
@@ -37,6 +37,5 @@ public class Usuario_Controller {
     public Usuario_Entity update(@PathVariable Long id, @RequestBody Usuario_Entity usuario) {
         return usuario_serv.update(id, usuario);
     }
-    @PostMapping("/login")
-    public Optional<Usuario_Entity> Login (@RequestBody Usuario_Entity usuario) { return usuario_serv.Login(usuario);}
+
 }

@@ -1,5 +1,8 @@
 package org.example.restecommercelibros.Service;
 
+import org.example.restecommercelibros.JWT.Auth_Response;
+import org.example.restecommercelibros.JWT.Login_Request;
+import org.example.restecommercelibros.JWT.Register_Request;
 import org.example.restecommercelibros.Model.Usuario_Entity;
 
 import java.util.List;
@@ -10,10 +13,10 @@ public interface Usuario_Service {
     Optional<Usuario_Entity> findById(Long id);
 
     // Añadiendo métodos para operaciones CRUD
-    Usuario_Entity save(Usuario_Entity usuario);
+    Auth_Response register(Register_Request request);
     void deleteById(Long id);
     Usuario_Entity update(Long id, Usuario_Entity usuario);
 
     //Metodos especificos
-    Optional<Usuario_Entity> Login(Usuario_Entity usuario);
+    Auth_Response Login(Login_Request request);
 }
