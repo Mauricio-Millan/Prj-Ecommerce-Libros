@@ -1,0 +1,238 @@
+<!-- Navbar -->
+<app-navbar (openLoginModal)="openLoginModal()"></app-navbar>
+
+<!-- Main Content -->
+<main>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Descubre mundos a través de las páginas
+        </h1>
+        <p class="text-xl mb-8 text-indigo-100">
+          Explora nuestra amplia selección de libros y sumérgete en nuevas aventuras.
+        </p>
+        <button class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition">
+          Ver catálogo
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-900">Categorías destacadas</h2>
+        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center">
+          Ver todas
+          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Ficción -->
+        <div class="bg-indigo-500 rounded-2xl p-6 text-white text-center hover:bg-indigo-600 cursor-pointer transition transform hover:scale-105">
+          <h3 class="text-xl font-bold">Ficción</h3>
+        </div>
+
+        <!-- No Ficción -->
+        <div class="bg-emerald-500 rounded-2xl p-6 text-white text-center hover:bg-emerald-600 cursor-pointer transition transform hover:scale-105">
+          <h3 class="text-xl font-bold">No Ficción</h3>
+        </div>
+
+        <!-- Infantil -->
+        <div class="bg-yellow-500 rounded-2xl p-6 text-white text-center hover:bg-yellow-600 cursor-pointer transition transform hover:scale-105">
+          <h3 class="text-xl font-bold">Infantil</h3>
+        </div>
+
+        <!-- Juvenil -->
+        <div class="bg-gray-700 rounded-2xl p-6 text-white text-center hover:bg-gray-800 cursor-pointer transition transform hover:scale-105">
+          <h3 class="text-xl font-bold">Juvenil</h3>
+        </div>
+
+        <!-- Autoayuda -->
+        <div class="bg-purple-500 rounded-2xl p-6 text-white text-center hover:bg-purple-600 cursor-pointer transition transform hover:scale-105">
+          <h3 class="text-xl font-bold">Autoayuda</h3>
+        </div>
+
+        <!-- Ciencia -->
+        <div class="bg-red-500 rounded-2xl p-6 text-white text-center hover:bg-red-600 cursor-pointer transition transform hover:scale-105">
+          <h3 class="text-xl font-bold">Ciencia</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Books (Placeholder) -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-900">Libros destacados</h2>
+        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center">
+          Ver todos
+          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Book Card Example (repeat for multiple books) -->
+        @for (i of [1,2,3,4,5]; track i) {
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition p-4">
+            <div class="bg-gray-200 h-64 rounded-lg mb-4 flex items-center justify-center">
+              <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+              </svg>
+            </div>
+            <div class="flex items-center mb-2">
+              <span class="text-yellow-400">★★★★★</span>
+              <span class="text-gray-600 text-sm ml-2">(42)</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1 line-clamp-2">Título del Libro</h3>
+            <p class="text-sm text-gray-600 mb-2">Autor Ejemplo</p>
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold text-gray-900">$19.99</span>
+              <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">
+                Añadir
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-900">Más vendidos</h2>
+        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center">
+          Ver todos
+          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        @for (i of [1,2,3]; track i) {
+          <div class="bg-white rounded-lg shadow-md p-4 flex gap-4">
+            <div class="flex-shrink-0">
+              <span class="bg-yellow-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center">#{{i}}</span>
+            </div>
+            <div class="bg-gray-200 w-20 h-28 rounded flex items-center justify-center flex-shrink-0">
+              <svg class="w-10 h-10 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-900 mb-1">Título Bestseller</h3>
+              <p class="text-sm text-gray-600 mb-2">Autor Popular</p>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-900">$12.99</span>
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-1 rounded text-sm font-semibold transition">
+                  Añadir
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offer Banner -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="bg-gradient-to-r from-emerald-500 to-blue-600 rounded-3xl p-12 text-white relative overflow-hidden">
+        <div class="absolute top-4 left-4 bg-white text-emerald-600 px-4 py-2 rounded-full font-bold">
+          OFERTA ESPECIAL
+        </div>
+        <div class="max-w-2xl">
+          <h2 class="text-4xl font-bold mb-4">
+            ¡30% de descuento en todos los libros de ciencia ficción!
+          </h2>
+          <p class="text-xl mb-6 text-emerald-50">
+            Usa el código: SCIFI30 al finalizar tu compra.
+          </p>
+          <p class="mb-8 text-emerald-100">
+            Oferta válida hasta el 30 de septiembre.
+          </p>
+          <button class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition">
+            Explorar ahora
+          </button>
+        </div>
+        <div class="absolute bottom-0 right-0 text-[200px] font-bold opacity-10">
+          30%
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Authors -->
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-900">Autores populares</h2>
+        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center">
+          Ver todos
+          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        @for (author of ['J.K. Rowling', 'Stephen King', 'Gabriel García Márquez', 'J.R.R. Tolkien', 'Jane Austen', 'George R.R. Martin']; track author) {
+          <div class="text-center">
+            <div class="bg-gray-200 w-24 h-24 rounded-full mx-auto mb-3 flex items-center justify-center">
+              <svg class="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900">{{author}}</h3>
+            <p class="text-sm text-gray-600">12 libros</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Suscríbete a nuestro boletín</h2>
+        <p class="text-gray-300 mb-8">
+          Recibe novedades, ofertas exclusivas y recomendaciones personalizadas.<br>
+          No compartiremos tu correo electrónico con terceros.
+        </p>
+        <div class="flex gap-2 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Tu correo electrónico"
+            class="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <button class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold rounded-lg transition">
+            Suscribir
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<app-footer></app-footer>
+
+<!-- Login Modal -->
+<app-login-modal
+  [isOpen]="isLoginModalOpen"
+  (closeModal)="closeLoginModal()"
+></app-login-modal>

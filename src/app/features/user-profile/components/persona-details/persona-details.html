@@ -1,0 +1,12 @@
+<p>persona-details works!</p>
+<p >
+  <strong>Nombre:</strong> {{ user?.nombre }}<br>
+  <strong>Apellido:</strong> {{ user?.apellido }}<br>
+  <strong>Email:</strong> {{ user?.email }}<br>
+  <strong>Teléfono:</strong> {{ user?.telefono }}<br>
+  <strong>Dirección:</strong> {{ user?.direccion }}<br>
+  <strong>Rol:</strong> {{ user?.idRol?.nombre }}<br>
+</p>
+@if (errorMessage) {
+  <p class="error">{{ errorMessage }}</p>
+}
