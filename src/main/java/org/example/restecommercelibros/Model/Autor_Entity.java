@@ -16,10 +16,8 @@ public class Autor_Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     @Column(name = "nombre", nullable = false, length = 255)
     private String nombre;
-
     @Column(name = "nacionalidad", length = 100)
     private String nacionalidad;
 }

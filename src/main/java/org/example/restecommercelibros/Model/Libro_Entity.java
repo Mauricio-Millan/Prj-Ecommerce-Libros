@@ -16,7 +16,6 @@ public class Libro_Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     @Column(name = "nombre",nullable = false)
     private String nombre;
     @Column(name = "idioma_original")

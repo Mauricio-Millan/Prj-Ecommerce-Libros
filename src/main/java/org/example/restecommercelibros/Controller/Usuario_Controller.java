@@ -27,7 +27,6 @@ public class Usuario_Controller {
         return usuario_serv.findById(id);
     }
 
-
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {
         usuario_serv.deleteById(id);
